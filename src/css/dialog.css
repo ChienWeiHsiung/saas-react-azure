@@ -1,0 +1,833 @@
+*{
+    font-family:sans-serif;
+    margin: 0;
+}
+
+/*設定dialog基本樣式*/
+dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+    width: clamp(300px, 80%, 900px);
+    height: clamp(500px, 80%, 700px);
+    margin: 0 auto;
+    border: none;
+    border-radius: 5px;
+    opacity: 0;
+    padding: 0;
+}
+
+dialog:focus {
+    outline-color: transparent;
+    outline-style: none;
+}
+
+.small_dialog{
+    width: clamp(100px, 80%, 300px);
+    height: clamp(10px, 80%, 160px);
+    left: 20%;
+}
+
+.small_dia_container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    border: none;
+    grid-template-rows: 1fr 10fr;
+}
+
+.dia_container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    border: none;
+    grid-template-rows: 1fr 10fr 80px;
+}
+
+.dia_header {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 11fr 1fr;
+    padding: 2em 2em 0 2em;
+}
+
+.dia_main {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 2em;
+    padding: 1.5em 2em 0 2em;
+    overflow: auto;
+    z-index: 3;
+}
+
+.dia_main2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 2em;
+    padding: 1.5em 2em 0 2em;
+    overflow: auto;
+    z-index: 2;
+}
+
+.dia_footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5em 2em 0 2em;
+    gap: 0.5em;
+}
+
+.f5_bg {
+    background-color: #F5F5F5;
+}
+
+.dia_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25em;
+    height: 35px;
+    width: 100px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn_blue {
+    background-color: #0970D0;
+    color: #fff;
+}
+
+.btn_blue:hover {
+    background-color: #0964b9;
+    transition: all 0.3s;
+}
+
+.btn_green {
+    background-color: #57BC76;
+    color: #fff;
+}
+
+.btn_green:hover {
+    background-color: #499f63;
+    transition: all 0.3s;
+}
+
+.btn_gray {
+    background-color: #cacaca;
+    color: #fff;
+}
+
+.btn_gray:hover {
+    background-color: #aeaeae;
+    transition: all 0.3s;
+}
+
+.dia_addbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #57BC76;
+    color: #fff;
+    border-radius: 0.25em;
+    width: 100px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.dia_close, .dia_prepage {
+    color: #8A8A8A;
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0.5;
+    height: 20px;
+}
+
+.dia_close {
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-self: end;
+}
+
+.dia_close:hover, .dia_prepage:hover {
+    color: #8A8A8A;
+    opacity: 1;
+    transition: 0.2s;
+}
+
+/*group*/
+.input_group2 {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.radio_group {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+
+
+/*subscription*/
+.dia_title {
+    display: flex;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    color: #323A47;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    gap: 1em;
+    cursor: default;
+}
+
+.dia_subtitle {
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    color: #8A8A8A;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/*下拉選單捲軸底色 */
+::-webkit-scrollbar-track {
+    background-color: #F0F0F0;
+}
+/*下拉選單捲軸寬度 */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+/*下拉選單捲軸本體顏色 */
+::-webkit-scrollbar-thumb {
+    background-color: #CCC;
+    border-radius: 2px;
+}
+
+.overflow {
+    overflow: auto;
+    padding: 0 1em 0 0.25em;
+}
+
+.sub_box {
+    display: grid;
+    background-color: #F5F5F5;
+    border-radius: 0.5em;
+    padding: 1em;
+    grid-template-rows: 1fr 50px;
+    gap: 2em;
+}
+
+.sub_box:hover {
+    transition: 0.5s;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+}
+
+/*已訂閱*/
+.sub_activebox {
+    background-color: #3566A0;
+    color: #FFF;
+    border-radius: 0.5em;
+    padding: 1em;
+    display: grid;
+    grid-template-rows: 1fr 50px;
+    gap: 2em;
+}
+
+.sub_activebox:hover {
+    transition: 0.5s;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.sub_activebox .content{
+    color: #fff;
+}
+
+.sub_activebox .resent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0F427F;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 16px;
+    border-radius: 0.5em;
+}
+
+.sub_activebox .resent:hover {
+    transition: 0.5s;
+    background: rgba(15, 66, 127, 0.7);
+}
+
+.content {
+    color: #6F6F6F;
+    background-color: transparent;
+    padding: 0 1em;
+}
+
+.plan_title {
+    display: flex;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 1em 0;
+}
+
+.plan_subtitle {
+    display: flex;
+    font-size: 14px;
+    height: 40px;
+}
+
+.plan_price {
+    font-weight: bolder;
+    font-size: 32px;
+    margin: 0.5em 0;
+}
+
+.plan_list {
+    display: grid;
+    gap: 0.5em;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.list img {
+    width: 15px;
+}
+
+.resent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 3px solid #0F427F;
+    color: #0F427F;
+    font-weight: bolder;
+    font-size: 16px;
+    border-radius: 0.5em;
+    cursor: default;
+}
+
+.resent:hover {
+    transition: 0.5s;
+    background-color: #0F427F;
+    color: #fff;
+}
+
+.test_container {
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 1em;
+}
+
+.test {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CCC;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0.5em;
+    border: 1px solid #fff;
+    padding: 0 2em;
+}
+
+.test:hover {
+    transition: 0.3s;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+/*sub第二頁*/
+.choosenbox {
+    color: #6F6F6F;
+    border-radius: 0.5em;
+    padding: 2em;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+    overflow: auto;
+    margin-bottom: 2em;
+}
+
+.choosenbox .plan_title {
+    margin: 0;
+}
+
+.choosenbox .plan_subtitle {
+    height: auto;
+    margin-top: 1em;
+}
+
+.choosenbox .plan_list {
+    margin-top: 0.5em;
+}
+
+.question {
+    display: grid;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+
+.question label {
+    color: #8A8A8A;
+    font-size: 14px;
+}
+
+.question :focus {
+    outline: 1px solid #8A8A8A;
+}
+
+.question ::placeholder {
+    display: grid;
+    color: #A5A5A5;
+    font-size: 14px;
+}
+
+.question input[type="text"], .question input[type="date"] {
+    line-height: 40px;
+    border: 1px solid #D9D9D9;
+    border-radius: 0.2em;
+    color: #8A8A8A;
+    padding: 0 1em;
+}
+
+.question input[type="text"]:hover {
+    transition: all 0.2s;
+    border: 1px solid #A5A5A5;
+}
+
+.totalprice {
+    font-size: 24px;
+    font-weight: bold;
+    color: #323A47;
+}
+
+.creditcard {
+    display: grid;
+    align-items: center;
+    border: 1px solid #D9D9D9;
+    background-color: #fff;
+    border-radius: 0.2em;
+    color: #A5A5A5;
+    font-size: 16px;
+    padding: 1em;
+    cursor: pointer;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.5em;
+}
+
+.creditcard:hover {
+    transition: all 0.3s;
+    border: 1px solid #A5A5A5;
+    color: #8A8A8A;
+    background-color: #F5F5F5;
+}
+
+.icon_group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 30px;
+    overflow: auto;
+}
+
+.icon {
+    margin-left: 0.5em;
+    height: 20px;
+}
+
+.nextpage {
+    display: flex;
+    margin-left: 1.5em;
+    height: 15px;
+    opacity: 0.5;
+}
+
+/* 下拉選單 */
+.select-wrapper{
+    position: relative;
+    user-select: none;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+}
+
+.question .select__trigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    line-height: 40px;
+    border: 1px solid #D9D9D9;
+    border-radius: 0.2em;
+    padding: 0em 1em;
+    color: #8C8C8C;
+    font-size: 16px;
+    cursor: pointer;
+    background: url("../img/dialog_img/dropdown.png") 95% center no-repeat;
+    background-color: #fff;
+}
+
+.question .select__trigger.rotate {
+    background: url("../img/dialog_img/dropdown2.png") 95% center no-repeat;
+    pointer-events: all;
+}
+
+.question .select__trigger:hover {
+    transition: all 0.2s;
+    border: 1px solid #A5A5A5;
+}
+
+.question .custom-options {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-right: none;
+    border-top: 0;
+    background: #fff;
+    transition: all 0.2s;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    overflow: auto;
+    height: 150px;
+    border: 2px solid #f0f0f0;
+    color: #6F6F6F;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.25);
+    z-index: 3;
+}
+
+.select.open .custom-options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.question .custom-option {
+    position: relative;
+    display: block;
+    padding: 0 1.25em 0 1.25em;
+    font-weight: 300;
+    line-height: 40px;
+    transition: all 0.2s;
+}
+
+.custom-option:hover {
+    background-color: #F5F5F5;
+}
+
+.custom-option.selected {
+    color: #8C8C8C;
+    background-color: #F0F0F0;
+}
+
+/*下拉選單捲軸底色 */
+.question .custom-options::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+/*下拉選單捲軸寬度 */
+.question .custom-options::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+/*下拉選單捲軸本體顏色 */
+.question .custom-options::-webkit-scrollbar-thumb {
+    background-color: #CCC;
+    border-radius: 3px;
+}
+
+/*factory*/
+.factoryimg {
+    display: grid;
+    width: 200px;
+    height: 130px;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.factoryimg .noneimg {
+    width: 20px;
+}
+
+.factoryimg img {
+    width: 100%;
+}
+
+.option {
+    display: flex;
+    height: 50px;
+    background-color: #fff;
+    margin-bottom: 1em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25em;
+    color: #8C8C8C;
+    cursor: pointer;
+}
+
+.option:hover {
+    transition: all 0.5s;
+    background-color: #F0F0F0;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.selected2 {
+    background-color: #8C8C8C;
+    color: #fff;
+}
+
+.selected2:hover {
+    transition: all 0.3s;
+    background-color: #9c9c9c;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.textarea {
+    display: flex;
+    border: 1px solid #D9D9D9;
+    border-radius: 0.2em;
+    color: #8A8A8A;
+    padding: 0.5em 1em;
+    resize: none;
+}
+
+/*personnel*/
+.question input[type="radio"] {
+    display: none;
+}
+
+.radio_circle {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-right: 1.5em;
+    cursor: pointer;
+}
+
+.radio_circle:hover {
+    transition: all 0.2s;
+}
+
+input[type="radio"] + .radio_circle::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 0.5em; /* 加上文字間距 */
+}
+
+input[type="radio"]:checked + .radio_circle::before {
+    transition: all 0.1s;
+    border: 3px solid #D9D9D9 ;
+    background-color: #8A8A8A;
+}
+
+
+/*reportform*/
+
+.checkbox_title {
+    display: flex;
+    font-size: 14px;
+    color: #A5A5A5;
+}
+
+.rpf_checkbox {
+    display: grid;
+    overflow: auto;
+    padding-right: 1em;
+}
+
+.checkbox_group {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-auto-rows: 1fr;
+    gap: 0.5em 0.25em;
+    align-items: center;
+    margin: 0.5em 0  1em 0;
+    color: #8A8A8A;
+}
+
+.question_group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.checkbox_group input, .checkbox_group label {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.checkbox_group input:hover,
+.checkbox_group label:hover {
+    opacity: 1;
+    transition: all 0.1s;
+}
+
+.checkbox_group input {
+    appearance: none;
+    background: #fff;
+    border: 1px solid #D9D9D9;
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+}
+
+.checkbox_group input:checked:before {
+    display: flex;
+    content: '\2714';
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    font-size: 8px;
+    align-content: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #8A8A8A;
+    outline: none;
+}
+
+.checkbox_group input:checked,
+.checkbox_group input:not(:checked) {
+    outline: none;
+}
+
+@media (max-width: 619px) {
+    .dia_main, .dia_main2, .dia_main3 {
+        padding: 1.5em;
+    }
+    .sub_payment {
+        padding: 0;
+        gap: 0;
+    }
+    .sub_payment, .rpf_checkbox {
+        overflow: visible;
+    }
+    .sub_activebox, .totalprice {
+        margin-bottom: 1em;
+    }
+}
+
+.alert_group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+}
+
+.on, .off, .none {
+    display: grid;
+    margin-right: 0.5em;
+    height: 35px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25em;
+    color: #fff;
+    cursor: default;
+    font-size: 14px;
+}
+
+.on {
+    background-color: #79C584;
+}
+
+.off {
+    background-color: #8C8C8C;
+}
+
+.none {
+    background-color: #D9D9D9;
+    cursor: pointer;
+}
+
+.none:hover {
+    transition: 0.3s;
+    background-color: #cacaca;
+}
+
+.condition_group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,  minmax(100px, auto));
+    margin: 0.5em 0 1em 0;
+    gap: 0.5em;
+}
+.condition {
+    display: flex;
+    background-color: #fff;
+    color: #A5A5A5;
+    padding: 0.5em 0;
+    cursor: default;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 0.25em;
+}
+
+
+/*Upload Data*/
+.pickone {
+    display: grid;
+    background-color: #f5f5f5;
+    color: #323A47;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 1em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5em;
+}
+
+.pickone:hover {
+    transition: all 0.5s;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border: 1px solid #D9D9D9;
+    border-radius: 0.2em;
+    color: #8A8A8A;
+    padding: 0 1em;
+    font-size: 14px;
+}
+
+.question input[type="file"] {
+    display: none;
+}
+
+.flex_group {
+    display: flex;
+    gap: 0.5em;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: inline;
+    -webkit-appearance: none;
+}

@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html{
+  height: 100%;
+  user-select: none; 
+  /*防止使用者選取文字*/
+}
+
+body{
+  height: 100%;
+}
+
+.login_root{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100%;
+}
+
+/*-----------------------------------左半邊的藍色區域----------------------------------- */
+header{
+  background: linear-gradient(164.85deg, #223546 0%, #3566A0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.logo > img{
+  width: 200px;
+}
+
+.sub_text{
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  font-size: 15px;
+  margin: 5em;
+}
+
+/* -----------------------------------右半邊功能區域----------------------------------- */
+.login_main{
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  position: relative;
+}
+
+/* 背景 */
+.bg_right{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.login_input_group{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+}
+
+.main_title{
+  font-weight: bolder;
+  color: #0F427F;
+  font-size: xx-large;
+}
+
+.sub_title{
+  color: #A5A5A5;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+/* 請向負責人詢問使用代碼 icon */
+.circle-info{
+  margin: 0 10px;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 30px;
+  background-color: #D9D9D9;
+  color: #fff;
+  font-size: small;
+  text-align: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+/* input 白色樣式 */
+.input_white{
+  font-weight: bolder;
+  background: #F6F7FB;
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+  height: 50px;
+  padding: 0 10px;
+  margin: 10px 0;
+  transition: all .1s linear;
+}
+
+.input_white:focus{
+  outline: 1.5px solid #517BAC;
+}
+
+.input_white:hover{
+  box-shadow: 0px 0px 4px 0px #517BAC;
+  
+}
+
+/* input 預設文字 */
+::placeholder{
+  color: #A5A5A5;
+  opacity: 1;
+}
+
+/* 藍色提交按鈕 */
+.submit{
+  font-weight: bolder;
+  font-size: 18px;
+  background: #0F427F;
+  box-shadow: inset -3px -4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  border: 0;
+  height: 50px;
+  width: 100%;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* 忘記密碼連結按鈕 */
+.pwd_link{
+  border: 0;
+  background-color: transparent;
+  color: #A5A5A5;
+  margin: 10px 0;
+  text-align:left;
+  cursor: pointer;
+}
+
+/* 倒數提示文字 */
+.reciprocal{
+  color: #A5A5A5;
+  font-size: smaller;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* 倒數數字 */
+.countdown{
+  color: #3566A0;
+}
+
+/* 申請或是加入提交按鈕共同樣式 */
+.submit_btn{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 申請 */
+.apply_submit{
+  margin: 10px 0;
+  padding: 0 15px;
+  background: #517BAC;
+  color: #FFFFFF;
+  border-radius: 5px;
+  border: 0;
+  height: 50px;
+  cursor: pointer;
+}
+
+/* 加入 */
+.join_submit{
+  margin: 10px 0;
+  padding: 0 15px;
+  background: #FFFFFF;
+  border: 1px solid #3566A0;
+  color: #3566A0;
+  border-radius: 5px;
+  height: 50px;
+  cursor: pointer;
+}
+
+/* 申請和加入提交按鈕箭頭icon樣式 */
+.arrow{
+  width: 7px;
+  height: 7px;
+  transform:rotate(134deg);
+}
+
+.arrow_white{
+  border-left: 2px solid #fff;
+  border-top: 2px solid #fff;
+}
+
+.arrow_blue{
+  border-left: 2px solid #3566A0;
+  border-top: 2px solid #3566A0;
+}
+
+/* 刪除下拉選單預設箭頭icon */
+.arrow{
+  color: #A5A5A5;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* 晃動效果 */
+.shake{
+  animation: shake 800ms ease-in-out;
+}
+
+@keyframes shake{
+  10%, 90%{transform: translate3d(-1px, 0, 0);}
+  20%, 80%{transform: translate3d(+2px, 0, 0);}
+  30%, 70%{transform: translate3d(-4px, 0, 0);}
+  40%, 60%{transform: translate3d(+4px, 0, 0);}
+  50%{transform: translate3d(-4px, 0, 0);}
+}
+
+/* 提示 */
+.input_warning::placeholder{
+  color: tomato;
+}
+
+/* 下拉選單 */
+.select-wrapper{
+  position: relative;
+  user-select: none;
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+}
+
+.select__trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #3b3b3b;
+  line-height: 50px;
+}
+
+.custom-options {
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 3px solid #f3f4f7;
+  border-right: none;
+  border-top: 0;
+  background: #fff;
+  transition: all 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 2;
+  overflow: auto;
+  height: 160px;
+}
+
+.select.open .custom-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.custom-option {
+  position: relative;
+  display: block;
+  padding: 0 22px 0 22px;
+  font-weight: 300;
+  color: #3b3b3b;
+  line-height: 45px;
+  transition: all 0.5s;
+}
+.custom-option:hover {
+  background-color: #b2b2b2;
+}
+.input_white.custom-option.selected {
+  color: #ffffff;
+  background-color: #0F427F;
+}
+
+/*下拉選單捲軸底色 */
+.input_white.custom-options::-webkit-scrollbar-track {
+  background-color: #0F427F;
+}
+/*下拉選單捲軸寬度 */
+.input_white.custom-options::-webkit-scrollbar {
+  width: 3px;
+}
+/*下拉選單捲軸本體顏色 */
+.input_white.custom-options::-webkit-scrollbar-thumb {
+  background-color: #bb6573;
+}
