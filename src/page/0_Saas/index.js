@@ -95,7 +95,7 @@ const Saas = () => {
                     console.log(data);
                     if (data.result === true) {
                         if (data.verified === true) {
-                            navigate("/pwd", { state: { value : inputValue } } );
+                            navigate("/pwd");
                         } else {
                             navigate("/PresetPwd");
                         }
