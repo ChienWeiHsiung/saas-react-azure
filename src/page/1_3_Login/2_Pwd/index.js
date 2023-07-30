@@ -15,6 +15,8 @@ import API_URL from '../../../config';
 
 import { UserContext } from '../../../container/UserContextProvider';
 
+import { useLocation } from 'react-router-dom';
+
 
 const Pwd = () =>{
     let main_title = "請輸入密碼"
@@ -22,6 +24,10 @@ const Pwd = () =>{
     let placeholder = "密碼"
     let link = "/ForgetPwd"
     let submit_text = "登入"
+
+    const location = useLocation();
+    const valueFromState = location.state?.value;
+    console.log(valueFromState);
 
     const navigate = useNavigate();
     const [inputPwd, setInputPwd] = useState("");
